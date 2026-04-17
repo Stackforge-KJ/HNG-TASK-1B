@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HNG Profile card JHAY-S1</title>
+  <link rel="stylesheet" href="./stage1b.css">
+</head>
+
+<body>
+
+<article id="profile-card" data-testid="test-profile-card" aria-label="User profile card">
+
+  <div class="card-banner" role="presentation" aria-hidden="true"></div>
+
+  <div class="card-top">
+    <figure id="avatar-wrap">
+      <img
+        data-testid="test-user-avatar"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT73yBi4J45YbqLejel-zYgEOvS5dLvYr-uiA2HBktjmzoHe6xeVoo_&usqp=CAE&s"
+        alt="Portrait of Jhay, a software developer"
+        width="88"
+        height="88"
+      >
+   
+    </figure>
+
+    <div class="name-row">
+      <h1 id="user-name" data-testid="test-user-name" aria-label="User name: Jhay">JHAY</h1>
+
+      <p id="user-bio" data-testid="test-user-bio">
+        Frontend developer passionate about building accessible, performant web experiences.
+        I love open-source, clean code, and a good cup of coffee.
+      </p>
+
+      <div class="time-badge" aria-live="polite" aria-atomic="true" aria-label="Current epoch time in milliseconds">
+        <span class="dot" aria-hidden="true"></span>
+
+        <time id="epoch-time" data-testid="test-user-time"></time>
+
+        <span aria-hidden="true">ms</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider" aria-hidden="true">
+
+  <div class="card-body">
+
+    <!-- Social Links -->
+    <nav id="user-social-links" data-testid="test-user-social-links" aria-label="Social media links">
+      <h2>Connect</h2>
+      <ul class="social-list">
+        <li>
+          <a data-testid="test-user-social-twitter"
+             href="https://twitter.com"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Twitter profile (opens in new tab)">
+            Twitter
+          </a>
+        </li>
+        <li>
+          <a data-testid="test-user-social-github"
+             href="https://github.com"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="GitHub profile (opens in new tab)">
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a data-testid="test-user-social-linkedin"
+             href="https://linkedin.com"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="LinkedIn profile (opens in new tab)">
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a data-testid="test-user-social-youtube"
+             href="https://youtube.com"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="YouTube channel (opens in new tab)">
+            YouTube
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Hobbies & Dislikes -->
+    <div class="lists-grid">
+      <section class="list-section" aria-labelledby="hobbies-heading">
+        <h2 id="hobbies-heading">Hobbies</h2>
+        <ul id="user-hobbies" data-testid="test-user-hobbies" aria-label="User hobbies">
+          <li>Coding/li>
+          <li>movies</li>
+          <li>Gaming</li>
+          <li>Reading sci-fi</li>
+        </ul>
+      </section>
+
+      <section class="list-section" aria-labelledby="dislikes-heading">
+        <h2 id="dislikes-heading">Dislikes</h2>
+        <ul id="user-dislikes" data-testid="test-user-dislikes" aria-label="User dislikes">
+          <li>bugs</li>
+          <li>broke people in relationship</li>
+          <li>bugs</li>
+        </ul>
+      </section>
+    </div>
+
+  </div>
+</article>
+
+<script>
+(function () {
+  const timeEl = document.getElementById('epoch-time');
+
+  function tick() {
+    const now = Date.now();
+    timeEl.textContent = now;
+    timeEl.setAttribute('datetime', new Date(now).toISOString());
+  }
+
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
+
+</body>
+</html>
